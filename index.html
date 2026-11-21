@@ -1300,7 +1300,41 @@
         function filterPortalNews() {
             renderNews();
         }
+function filterPortalNews() {
+            renderNews();
+        }
 
+        async function syncCircularsFromJson(animate = false) {
+            const icon = document.getElementById('refreshIcon');
+            if (animate && icon) icon.classList.add('animate-spin');
+
+            try {
+                const response = await fetch(`./circulars.json?t=${Date.now()}`, { cache: 'no-store' });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+                const latestData = await response.json();
+                if (Array.isArray(latestData) && latestData.length > 0) {
+                    portalNewsData.length = 0;
+                    portalNewsData.push(...latestData);
+                }
+            } catch (error) {
+                console.warn('Using fallback embedded circulars:', error);
+            } finally {
+                initTicker();
+                renderNews();
+                if (animate && icon) {
+                    setTimeout(() => icon.classList.remove('animate-spin'), 400);
+                }
+            }
+        }
+
+        function refreshPortalNews() {
+            syncCircularsFromJson(true);
+        }
+
+        syncCircularsFromJson(false);
+
+        function handleFormSubmit(event) {
         function refreshPortalNews() {
             const icon = document.getElementById('refreshIcon');
             if(icon) icon.classList.add('animate-spin');
