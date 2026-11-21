@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HS & CO | Accounting & Tax Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1d52bc',
+                            darkblue: '#123986',
+                            navy: '#0b1e47',
+                            green: '#10b981',
+                            lightgreen: '#34d399',
+                            slate: '#081226',
+                            darkbg: '#040914',
+                            cardbg: '#0d1b38'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #040914;
+            color: #f1f5f9;
+        }
+        .glass-header {
+            background: rgba(11, 30, 71, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #040914 0%, #081226 50%, #0b1e47 100%);
+        }
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover-glow {
+            transition: all 0.3s ease;
+        }
+        .card-hover-glow:hover {
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.25);
+            border-color: #10b981;
+            transform: translateY(-2px);
+        }
+
+        /* Horizontal Scrolling Marquee Ticker */
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .ticker-move {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: ticker 85s linear infinite;
+        }
+        .ticker-move:hover {
+            animation-play-state: paused;
+        }
+        .ticker-item {
+            display: inline-block;
+            padding: 0 2rem;
+        }
+
+        /* Vertical Scrolling Ticker for Statutory Compliances */
+        @keyframes verticalTicker {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        .vertical-ticker-container {
+            height: 310px;
+            overflow: hidden;
+            position: relative;
+        }
+        .vertical-ticker-container::before,
+        .vertical-ticker-container::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 20px;
+            z-index: 10;
+            pointer-events: none;
+        }
+        .vertical-ticker-container::before {
+            top: 0;
+            background: linear-gradient(to bottom, #0d1b38 0%, transparent 100%);
+        }
+        .vertical-ticker-container::after {
+            bottom: 0;
+            background: linear-gradient(to top, #0d1b38 0%, transparent 100%);
+        }
+        .vertical-ticker-move {
+            animation: verticalTicker 32s linear infinite;
+        }
+        .vertical-ticker-container:hover .vertical-ticker-move {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-brand-darkbg text-slate-100 font-sans antialiased selection:bg-brand-green selection:text-white">
+
+    <div class="bg-brand-slate text-slate-300 text-xs py-2 border-b border-slate-800 hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-green"></i> (O) 77789 60087</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-green"></i> info@hsandco.in</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-clock text-brand-green"></i> Mon - Sat: 9:30 AM - 7:00 PM</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#quick-links" class="text-brand-lightgreen hover:underline font-semibold flex items-center gap-1.5">
+                    <i class="fa-solid fa-globe text-brand-green"></i> Portal Hub
+                </a>
+                <span class="text-slate-700">|</span>
+                <a href="https://www.incometax.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">IT Portal</a>
+                <a href="https://www.gst.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GST Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 w-full z-50 glass-header border-b border-slate-800 text-white shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo Integration (Exact Logo1.PNG Vector Representation) -->
+                <div class="relative group flex items-center">
+                    <a href="#hero" class="flex items-center space-x-3" title="HS AND CO - Accounting & Tax Professionals">
+                        <div class="bg-white px-3.5 py-2 rounded-2xl shadow-lg flex items-center justify-center transition-transform group-hover:scale-105 border border-slate-200 min-h-[52px]">
+                            <!-- Image fallback pointing to Logo1.PNG -->
+                            <img id="headerLogoImg" src="Logo1.PNG" alt="HS AND CO Logo" class="h-11 w-auto object-contain hidden" onload="this.classList.remove('hidden'); document.getElementById('headerLogoSvg').classList.add('hidden');" onerror="this.classList.add('hidden'); document.getElementById('headerLogoSvg').classList.remove('hidden');">
+                            
+                            <!-- High Precision Vector SVG Matching Logo1.PNG Directly -->
+                            <svg id="headerLogoSvg" class="h-11 w-auto" viewBox="0 0 380 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="blueGradLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#2563eb"/>
+                                        <stop offset="100%" stop-color="#1d52bc"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Upper Blue Swoosh Loop -->
+                                <path d="M 125 6 C 168 0, 198 18, 182 42 C 170 54, 155 32, 138 14 C 132 8, 128 7, 125 6 Z" fill="url(#blueGradLogo)"/>
+                                <!-- Left Lime Green Swoosh Arc -->
+                                <path d="M 112 14 C 82 22, 62 48, 78 72 C 86 84, 94 68, 84 54 C 76 42, 90 24, 112 14 Z" fill="#84cc16"/>
+                                <!-- Lower Blue Swoosh Arc -->
+                                <path d="M 74 76 C 98 94, 132 94, 165 78 C 178 72, 142 80, 110 84 C 88 86, 76 81, 74 76 Z" fill="url(#blueGradLogo)"/>
+                                
+                                <!-- Main Brand Text -->
+                                <text x="10" y="48" font-family="'Inter', system-ui, sans-serif" font-weight="800" font-size="38" fill="#1d52bc" letter-spacing="1">HS AND CO</text>
+                                
+                                <!-- Underlying Curved Wave Swoosh -->
+                                <path d="M 4 56 Q 180 72 365 48 Q 180 66 4 56 Z" fill="#1d52bc"/>
+                                
+                                <!-- Subtext & Line Divider -->
+                                <text x="98" y="74" font-family="'Inter', system-ui, sans-serif" font-weight="700" font-size="12" fill="#334155" letter-spacing="1.8">ACCOUNTING &amp; TAX PROFESSIONALS</text>
+                                <line x1="98" y1="80" x2="365" y2="80" stroke="#475569" stroke-width="1.2"/>
+                                <polygon points="225,76 230,80 220,80" fill="#475569"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#hero" class="text-slate-200 hover:text-brand-lightgreen transition-colors">Overview</a>
+                    <a href="#portal-updates" class="text-slate-200 hover:text-brand-lightgreen transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-rss text-brand-green"></i> Circulars & Amendments
+                    </a>
+                    <a href="#quick-links" class="text-slate-200 hover:text-brand-lightgreen transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-link text-brand-green"></i> Quick Links
+                    </a>
+                    <a href="#services" class="text-slate-200 hover:text-brand-lightgreen transition-colors">Services</a>
+                    <a href="#about" class="text-slate-200 hover:text-brand-lightgreen transition-colors">About Us</a>
+                    <a href="#contact" class="text-slate-200 hover:text-brand-lightgreen transition-colors">Contact Us</a>
+                </nav>
+
+                <!-- Header Action Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-green to-emerald-600 hover:opacity-90 text-white font-bold shadow-lg transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Book Consultation
+                    </a>
+                    <button id="menuBtn" aria-label="Toggle Mobile Menu" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-800 bg-brand-navy px-4 pt-3 pb-6 space-y-3">
+            <a href="#hero" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-blue/30">Overview</a>
+            <a href="#portal-updates" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-blue/30">Circulars & Amendments</a>
+            <a href="#quick-links" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-blue/30">Quick Portal Links</a>
+            <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-blue/30">Services</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-blue/30">About Us</a>
+            <a href="#contact" class="mobile-link block w-full text-center px-4 py-2.5 rounded-xl text-white bg-brand-green font-bold shadow-md">Book Consultation</a>
+        </div>
+    </header>
+
+    <div class="bg-brand-darkbg text-white border-b border-slate-800 py-2.5 overflow-hidden flex items-center shadow-lg relative z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center">
+            <div class="px-3 py-1 bg-gradient-to-r from-emerald-600 to-brand-green rounded-lg text-[11px] font-black uppercase tracking-wider text-white flex items-center gap-2 flex-shrink-0 z-10 shadow-sm mr-3">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                UPDATES
+            </div>
+
+            <div class="ticker-wrap text-xs font-medium text-slate-200">
+                <div class="ticker-move" id="tickerContent">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="hero" class="relative pt-10 pb-16 hero-bg text-white overflow-hidden border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- 3 Equal Size Separated Cards Grid Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+                
+                <!-- Card 1: HS & CO Practice Overview (33.3% Width) -->
+                <div class="bg-brand-cardbg/80 border border-slate-800 rounded-3xl p-6 shadow-2xl backdrop-blur-md flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy border border-brand-green/40 text-brand-lightgreen text-xs font-semibold">
+                            <!-- SVG Diamond Logo Icon -->
+                            <svg class="w-4 h-4 inline-block" viewBox="0 0 100 100" fill="none">
+                                <rect x="20" y="20" width="60" height="60" transform="rotate(45 50 50)" stroke="#1d52bc" stroke-width="8" fill="none"/>
+                                <rect x="28" y="28" width="44" height="44" transform="rotate(45 50 50)" stroke="#34d399" stroke-width="6" fill="none"/>
+                                <rect x="10" y="42" width="80" height="16" fill="#1d52bc"/>
+                                <text x="50" y="54" font-family="'Inter', sans-serif" font-weight="900" font-size="12" fill="#34d399" text-anchor="middle">HS & CO</text>
+                            </svg>
+                            <span>Tax & Compliance Advisors</span>
+                        </div>
+
+                        <h1 class="text-xl sm:text-2xl font-black tracking-tight leading-snug text-white">
+                            Precision Accounting & <span class="brand-gradient-text">Statutory Tax Compliance.</span>
+                        </h1>
+
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            At <strong class="text-white">HS & CO</strong>, we manage corporate financials, audit support, GST returns, and Income Tax submissions with guaranteed accuracy and prompt regulatory updates.
+                        </p>
+
+                        <!-- Highlights Grid -->
+                        <div class="grid grid-cols-1 gap-2.5 pt-1 text-xs">
+                            <div class="p-3 rounded-xl bg-brand-slate border border-slate-800 flex items-center space-x-3">
+                                <i class="fa-solid fa-calculator text-brand-green text-base"></i>
+                                <div>
+                                    <h5 class="font-bold text-slate-200">Tax Optimization</h5>
+                                    <p class="text-[10px] text-slate-400">Direct & Indirect Tax Planning</p>
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-brand-slate border border-slate-800 flex items-center space-x-3">
+                                <i class="fa-solid fa-file-signature text-brand-green text-base"></i>
+                                <div>
+                                    <h5 class="font-bold text-slate-200">GST & ITR Returns</h5>
+                                    <p class="text-[10px] text-slate-400">Monthly, Quarterly & Annual</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex flex-col gap-2.5">
+                        <a href="#services" class="w-full justify-center px-3 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-darkblue text-white font-bold text-xs transition-all shadow-md inline-flex items-center gap-2">
+                            Core Services <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                        <a href="#contact" class="w-full justify-center px-3 py-2.5 rounded-xl bg-gradient-to-r from-brand-green to-emerald-600 hover:opacity-90 text-white font-bold text-xs transition-all shadow-md inline-flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-check text-xs"></i> Book Consultation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Income Tax Compliances (33.3% Width) -->
+                <div class="bg-brand-cardbg/80 border border-slate-800 rounded-3xl p-6 shadow-2xl backdrop-blur-md flex flex-col justify-between">
+                    <div>
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                            <div>
+                                <span class="text-[10px] font-extrabold uppercase tracking-widest text-brand-lightgreen bg-brand-navy px-2.5 py-1 rounded-lg border border-brand-green/30">CBDT Schedule</span>
+                                <h3 class="text-base font-black text-white mt-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-calculator text-brand-green"></i>
+                                    Income Tax Compliances
+                                </h3>
+                            </div>
+                        </div>
+
+                        <!-- Vertical Ticker Container -->
+                        <div class="vertical-ticker-container">
+                            <div class="vertical-ticker-move space-y-2.5" id="section1Ticker">
+                                <!-- Dynamically generated for current active month -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-800 flex items-center justify-end">
+                        <a href="#portal-updates" class="text-xs font-bold text-brand-lightgreen hover:underline flex items-center gap-1">
+                            Income Tax Circulars <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: GST Compliances (33.3% Width) -->
+                <div class="bg-brand-cardbg/80 border border-slate-800 rounded-3xl p-6 shadow-2xl backdrop-blur-md flex flex-col justify-between">
+                    <div>
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                            <div>
+                                <span class="text-[10px] font-extrabold uppercase tracking-widest text-brand-lightgreen bg-brand-navy px-2.5 py-1 rounded-lg border border-brand-green/30">CBIC Schedule</span>
+                                <h3 class="text-base font-black text-white mt-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-receipt text-brand-green"></i>
+                                    GST Compliances
+                                </h3>
+                            </div>
+                        </div>
+
+                        <!-- Vertical Ticker Container -->
+                        <div class="vertical-ticker-container">
+                            <div class="vertical-ticker-move space-y-2.5" id="section2Ticker">
+                                <!-- Dynamically generated for current active month -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-800 flex items-center justify-end">
+                        <a href="#portal-updates" class="text-xs font-bold text-brand-lightgreen hover:underline flex items-center gap-1">
+                            GST Circulars <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portal-updates" class="py-20 bg-brand-slate text-white relative border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+                <div>
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-brand-lightgreen bg-brand-navy px-3.5 py-1.5 rounded-lg border border-brand-green/30">Official Repository</span>
+                    <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mt-3 whitespace-nowrap">Live Portal Updates & Circulars Feed</h2>
+                    <p class="text-slate-400 text-sm mt-1">Complete historical repository of statutory notifications, circulars, and tax law amendments with direct PDF & circular document redirection.</p>
+                </div>
+
+                <!-- Live Search & Category Filters -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative">
+                        <input type="text" id="newsSearch" oninput="filterPortalNews()" placeholder="Search circulars..." class="w-full sm:w-64 px-4 py-2.5 rounded-xl bg-brand-navy border border-slate-700 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-brand-green">
+                        <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-3 text-slate-400 text-xs"></i>
+                    </div>
+
+                    <div class="flex items-center gap-2 whitespace-nowrap overflow-x-auto" id="portalFilters">
+                        <button class="portal-filter-btn active px-3.5 py-2 rounded-xl text-xs font-bold bg-brand-green text-white transition-all" data-category="all">All</button>
+                        <button class="portal-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-brand-navy text-slate-300 border border-slate-700 hover:border-brand-green transition-all" data-category="incometax">Income Tax</button>
+                        <button class="portal-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-brand-navy text-slate-300 border border-slate-700 hover:border-brand-green transition-all" data-category="gst">GST</button>
+                        <button class="portal-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-brand-navy text-slate-300 border border-slate-700 hover:border-brand-green transition-all" data-category="mca">MCA</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feed Status Bar -->
+            <div class="mb-6 px-4 py-3 bg-brand-navy border border-slate-800 rounded-2xl flex items-center justify-between text-xs text-slate-300">
+                <div class="flex items-center space-x-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand-green animate-pulse"></span>
+                    <span>Feed Source: <strong class="text-white">Official Government Portals (Income Tax, GSTN, MCA)</strong></span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="refreshPortalNews()" class="text-brand-lightgreen hover:underline flex items-center font-bold">
+                        <i class="fa-solid fa-rotate-right mr-1" id="refreshIcon"></i> Sync Feed
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamically Populated News Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="newsGrid">
+                <!-- Circular cards injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="quick-links" class="py-16 bg-brand-darkbg border-b border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-brand-lightgreen bg-brand-navy px-3.5 py-1.5 rounded-lg border border-brand-green/30">Official Web Portals</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white mt-2">Important Government & Compliance Websites</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-1">One-click direct links to essential tax, statutory, corporate, and payroll portals.</p>
+                </div>
+            </div>
+
+            <!-- Short Links Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                
+                <a href="https://www.incometax.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-emerald-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-950 text-brand-green flex items-center justify-center text-lg mb-2.5 border border-emerald-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-brand-lightgreen transition-colors">Income Tax</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">e-Filing Portal</span>
+                </a>
+
+                <a href="https://www.gst.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-blue-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-blue-950 text-blue-400 flex items-center justify-center text-lg mb-2.5 border border-blue-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-blue-300 transition-colors">GST Portal</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">Returns & Payments</span>
+                </a>
+
+                <a href="https://www.mca.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-purple-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-purple-950 text-purple-400 flex items-center justify-center text-lg mb-2.5 border border-purple-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-purple-300 transition-colors">MCA V3 Portal</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">Company & LLP</span>
+                </a>
+
+                <a href="https://ewaybillgst.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-amber-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-amber-950 text-amber-400 flex items-center justify-center text-lg mb-2.5 border border-amber-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-amber-300 transition-colors">E-Way Bill</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">E-Way Generation</span>
+                </a>
+
+                <a href="https://www.tdscpc.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-indigo-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-950 text-indigo-400 flex items-center justify-center text-lg mb-2.5 border border-indigo-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-indigo-300 transition-colors">TRACES</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">TDS Certificates</span>
+                </a>
+
+                <a href="https://www.tin-nsdl.com" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-cyan-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-950 text-cyan-400 flex items-center justify-center text-lg mb-2.5 border border-cyan-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-cyan-300 transition-colors">TIN-NSDL</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">PAN & TAN Services</span>
+                </a>
+
+                <a href="https://unifiedportal-mem.epfindia.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-emerald-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-950 text-brand-green flex items-center justify-center text-lg mb-2.5 border border-emerald-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-brand-lightgreen transition-colors">EPFO Portal</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">PF & ECR Filing</span>
+                </a>
+
+                <a href="https://www.esic.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-sky-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-sky-950 text-sky-400 flex items-center justify-center text-lg mb-2.5 border border-sky-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-sky-300 transition-colors">ESIC Portal</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">ESI Compliance</span>
+                </a>
+
+                <a href="https://www.cbic.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-blue-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-blue-950 text-blue-400 flex items-center justify-center text-lg mb-2.5 border border-blue-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-blue-300 transition-colors">CBIC Portal</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">Customs & GST</span>
+                </a>
+
+                <a href="https://dgft.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-rose-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-rose-950 text-rose-400 flex items-center justify-center text-lg mb-2.5 border border-rose-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-rose-300 transition-colors">DGFT Portal</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">IEC & Foreign Trade</span>
+                </a>
+
+                <a href="https://udyamregistration.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-teal-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-teal-950 text-teal-400 flex items-center justify-center text-lg mb-2.5 border border-teal-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-teal-300 transition-colors">MSME Udyam</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">Udyam Registration</span>
+                </a>
+
+                <a href="https://www.icai.org" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 hover:border-orange-500/60 transition-all group flex flex-col items-center text-center shadow-md hover:-translate-y-1">
+                    <div class="w-10 h-10 rounded-xl bg-orange-950 text-orange-400 flex items-center justify-center text-lg mb-2.5 border border-orange-800 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <span class="font-bold text-xs text-white group-hover:text-orange-300 transition-colors">ICAI Portal</span>
+                    <span class="text-[10px] text-slate-400 mt-0.5">CA Institute</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-brand-darkbg text-white border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-brand-lightgreen bg-brand-navy px-3.5 py-1.5 rounded-lg border border-brand-green/30">Our Expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">Professional Accounting & Tax Services</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">End-to-end financial advisory, regulatory compliance, and statutory filings engineered for corporations, MSMEs, and individual taxpayers.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-brand-cardbg p-8 rounded-2xl border border-slate-800 shadow-xl transition-all duration-300 card-hover-glow flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue text-white flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-book-journal-whills"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Bookkeeping & Payroll</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Systematic day-to-day transaction recording, accounts payable/receivable, bank reconciliation, and automated monthly payroll processing.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Daily Ledger Maintenance</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Bank & Credit Reconciliation</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Payroll & Payslip Generation</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="setServicePreference('Bookkeeping')" class="text-sm font-bold text-brand-lightgreen hover:text-white flex items-center transition-colors">Inquire Service <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-brand-cardbg p-8 rounded-2xl border border-slate-800 shadow-xl transition-all duration-300 card-hover-glow flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue text-white flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Financial Accounting</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Formulation of Balance Sheets, Profit & Loss Statements, cash flow analysis, and management decision support reports.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> P&L & Balance Sheet Finalization</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> MIS Reports & Ratio Analysis</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Asset & Depreciation Schedules</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="setServicePreference('Accounting')" class="text-sm font-bold text-brand-lightgreen hover:text-white flex items-center transition-colors">Inquire Service <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-brand-cardbg p-8 rounded-2xl border border-slate-800 shadow-xl transition-all duration-300 card-hover-glow flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue text-white flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">ITR Filings & Tax Planning</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Optimized Income Tax Return filing for Salaried individuals, Proprietors, Companies, and Capital Gain tax planning.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Tax Deduction Maximization</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Advance Tax Computation</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Tax Notice Guidance & Response</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="setServicePreference('ITR Filings')" class="text-sm font-bold text-brand-lightgreen hover:text-white flex items-center transition-colors">Inquire Service <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-brand-cardbg p-8 rounded-2xl border border-slate-800 shadow-xl transition-all duration-300 card-hover-glow flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue text-white flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">GST Filings & Compliance</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            New GST Registration, GSTR-1 & GSTR-3B monthly/quarterly filings, GSTR-2B Input Tax Credit matching, and LUT filings.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Monthly GSTR-1 & 3B Returns</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Automated ITC Matching Alerts</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Annual GSTR-9 Preparation</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="setServicePreference('GST Filings')" class="text-sm font-bold text-brand-lightgreen hover:text-white flex items-center transition-colors">Inquire Service <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-brand-cardbg p-8 rounded-2xl border border-slate-800 shadow-xl transition-all duration-300 card-hover-glow flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue text-white flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Audit & Statutory Compliance</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Tax audits under Sec 44AB, statutory audits preparation, stock audits, and internal financial control reviews.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Tax Audit Report Form 3CD</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Internal Control Checks</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Statutory Checklists Review</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="setServicePreference('Tax Audit')" class="text-sm font-bold text-brand-lightgreen hover:text-white flex items-center transition-colors">Inquire Service <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-brand-cardbg p-8 rounded-2xl border border-slate-800 shadow-xl transition-all duration-300 card-hover-glow flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue text-white flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">MCA & Business Setup</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Private Limited Company Incorporation, LLP Registration, MSME/Udyam certification, and corporate legal consulting.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Entity Incorporation Support</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> MCA Filings & DIN Allotment</li>
+                            <li><i class="fa-solid fa-check text-brand-green mr-1.5"></i> Startup India & MSME Setup</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="setServicePreference('Consultation')" class="text-sm font-bold text-brand-lightgreen hover:text-white flex items-center transition-colors">Inquire Service <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-brand-darkbg border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-brand-lightgreen bg-brand-navy px-3.5 py-1.5 rounded-lg border border-brand-green/30">About HS & CO</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+                        Your Trusted Financial Partners in Growth & Regulatory Compliance
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        <strong class="text-white">HS & CO (Accounting & Tax Professionals)</strong> is a premier financial advisory and accounting firm providing end-to-end statutory services to corporations, startups, partnership firms, and salaried professionals.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        Navigating complex statutory deadlines, changing portal notifications, and input tax credit reconciliations can be daunting. Our team ensures high-precision filings, tax efficiency, and prompt assistance with official tax queries.
+                    </p>
+
+                    <!-- Advantages Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 flex items-start space-x-3 shadow-md">
+                            <i class="fa-solid fa-clock-rotate-left text-brand-green text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">On-Time Guarantee</h4>
+                                <p class="text-xs text-slate-400">Filings submitted well before statutory due dates.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 flex items-start space-x-3 shadow-md">
+                            <i class="fa-solid fa-lock text-brand-green text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Data Privacy & Security</h4>
+                                <p class="text-xs text-slate-400">Bank-level encryption for corporate ledgers.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 flex items-start space-x-3 shadow-md">
+                            <i class="fa-solid fa-chart-line text-brand-green text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Strategic Tax Planning</h4>
+                                <p class="text-xs text-slate-400">Planning to reduce legal tax burden effectively.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-brand-cardbg border border-slate-800 flex items-start space-x-3 shadow-md">
+                            <i class="fa-solid fa-handshake-angle text-brand-green text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Personalized Tax Advisory</h4>
+                                <p class="text-xs text-slate-400">Tailored financial solutions for every client.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="rounded-3xl bg-brand-cardbg p-8 text-white shadow-2xl relative overflow-hidden border-2 border-brand-blue/40">
+                        <h3 class="text-2xl font-black mb-6 text-brand-lightgreen border-b border-slate-800 pb-4">Client Service Commitment</h3>
+                        
+                        <ul class="space-y-5 text-sm">
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-200"><i class="fa-solid fa-check-double text-brand-green mr-2"></i> Bookkeeping Precision</span>
+                                <span class="font-bold text-brand-lightgreen">High Standard</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-200"><i class="fa-solid fa-check-double text-brand-green mr-2"></i> GSTR-2B Input Tax Reconciliation</span>
+                                <span class="font-bold text-brand-lightgreen">Maximized Claims</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-200"><i class="fa-solid fa-check-double text-brand-green mr-2"></i> IT Notice Support</span>
+                                <span class="font-bold text-brand-lightgreen">Complete Guidance</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-200"><i class="fa-solid fa-check-double text-brand-green mr-2"></i> Official Portal Monitoring</span>
+                                <span class="font-bold text-brand-lightgreen">Daily Sync</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-slate-400">Direct Office Helpline</p>
+                                <p class="text-base font-black text-white">(O) 77789 60087</p>
+                            </div>
+                            <a href="mailto:info@hsandco.in" class="px-4 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-darkblue text-white text-xs font-bold transition-all">
+                                Email Team
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-brand-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-lightgreen bg-brand-slate px-3 py-1.5 rounded-lg border border-brand-green/30">Get In Touch</span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">Schedule Your Consultation</h2>
+                        <p class="text-slate-300 mt-2 leading-relaxed text-sm">
+                            Have queries regarding ITR filings, GST compliance, MCA setup, or corporate bookkeeping? Reach out to our team today.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-slate border border-brand-blue/40 flex items-center justify-center text-brand-green text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Office Address</h4>
+                                <p class="text-slate-300 text-sm mt-1">328, Royal Square, Opp. Blu-fountain Hotel, VIP Circle, Utran, Surat, Gujarat - 394105</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-slate border border-brand-blue/40 flex items-center justify-center text-brand-green text-xl flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Office Phone</h4>
+                                <p class="text-slate-300 text-sm mt-1">(O) 77789 60087</p>
+                                <p class="text-xs text-slate-400">Mon - Sat: 9:30 AM - 7:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-slate border border-brand-blue/40 flex items-center justify-center text-brand-green text-xl flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Email Address</h4>
+                                <p class="text-slate-300 text-sm mt-1">info@hsandco.in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="lg:col-span-7">
+                    <form id="consultationForm" onsubmit="handleFormSubmit(event)" class="bg-brand-slate border border-slate-800 p-8 rounded-3xl shadow-2xl space-y-6">
+                        <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-4">Schedule Appointment / Query</h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="fullName" class="block text-xs font-bold uppercase text-slate-400 mb-2">Full Name *</label>
+                                <input type="text" id="fullName" required placeholder="e.g. Rajesh Shah" class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-brand-navy text-white focus:outline-none focus:border-brand-green">
+                            </div>
+
+                            <div>
+                                <label for="phoneNumber" class="block text-xs font-bold uppercase text-slate-400 mb-2">Mobile Number *</label>
+                                <input type="tel" id="phoneNumber" required placeholder="+91 9876543210" class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-brand-navy text-white focus:outline-none focus:border-brand-green">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="emailAddr" class="block text-xs font-bold uppercase text-slate-400 mb-2">Email Address *</label>
+                                <input type="email" id="emailAddr" required placeholder="rajesh@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-brand-navy text-white focus:outline-none focus:border-brand-green">
+                            </div>
+
+                            <div>
+                                <label for="serviceType" class="block text-xs font-bold uppercase text-slate-400 mb-2">Required Service *</label>
+                                <select id="serviceType" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-brand-navy text-white focus:outline-none focus:border-brand-green">
+                                    <option value="ITR Filings">Income Tax Return (ITR)</option>
+                                    <option value="GST Filings">GST Filings & Advisory</option>
+                                    <option value="Bookkeeping">Bookkeeping & Payroll</option>
+                                    <option value="Tax Audit">Business Tax Audit</option>
+                                    <option value="Consultation">General Tax Consultation</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="userMessage" class="block text-xs font-bold uppercase text-slate-400 mb-2">Brief details about your query</label>
+                            <textarea id="userMessage" rows="3" placeholder="Mention turnover details, GST queries, or ITR filing requirements..." class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-brand-navy text-white focus:outline-none focus:border-brand-green"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-green to-emerald-600 hover:opacity-90 text-white font-extrabold transition-all shadow-lg text-center">
+                            Submit Consultation Request <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+
+                        <div id="formStatus" class="hidden p-4 rounded-xl text-center text-sm font-bold"></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#02050c] text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="space-y-4">
+                    <div class="bg-white p-2.5 rounded-xl inline-block shadow-md border border-slate-200">
+                        <img id="footerLogoImg" src="Logo1.PNG" alt="HS AND CO Logo" class="h-9 w-auto object-contain hidden" onload="this.classList.remove('hidden'); document.getElementById('footerLogoSvg').classList.add('hidden');" onerror="this.classList.add('hidden'); document.getElementById('footerLogoSvg').classList.remove('hidden');">
+                        <svg id="footerLogoSvg" class="h-9 w-auto" viewBox="0 0 380 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="blueGradLogoFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2563eb"/>
+                                    <stop offset="100%" stop-color="#1d52bc"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M 125 6 C 168 0, 198 18, 182 42 C 170 54, 155 32, 138 14 C 132 8, 128 7, 125 6 Z" fill="url(#blueGradLogoFooter)"/>
+                            <path d="M 112 14 C 82 22, 62 48, 78 72 C 86 84, 94 68, 84 54 C 76 42, 90 24, 112 14 Z" fill="#84cc16"/>
+                            <path d="M 74 76 C 98 94, 132 94, 165 78 C 178 72, 142 80, 110 84 C 88 86, 76 81, 74 76 Z" fill="url(#blueGradLogoFooter)"/>
+                            <text x="10" y="48" font-family="'Inter', system-ui, sans-serif" font-weight="800" font-size="38" fill="#1d52bc" letter-spacing="1">HS AND CO</text>
+                            <path d="M 4 56 Q 180 72 365 48 Q 180 66 4 56 Z" fill="#1d52bc"/>
+                            <text x="98" y="74" font-family="'Inter', system-ui, sans-serif" font-weight="700" font-size="12" fill="#334155" letter-spacing="1.8">ACCOUNTING &amp; TAX PROFESSIONALS</text>
+                            <line x1="98" y1="80" x2="365" y2="80" stroke="#475569" stroke-width="1.2"/>
+                            <polygon points="225,76 230,80 220,80" fill="#475569"/>
+                        </svg>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Professional Accounting, Bookkeeping, Income Tax Return Filings, GST Compliance & Corporate Financial Advisory.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-brand-lightgreen transition-colors">About Us</a></li>
+                        <li><a href="#portal-updates" class="hover:text-brand-lightgreen transition-colors">Circulars & Amendments Repository</a></li>
+                        <li><a href="#quick-links" class="hover:text-brand-lightgreen transition-colors">Important Web Portals Hub</a></li>
+                        <li><a href="#services" class="hover:text-brand-lightgreen transition-colors">Our Services</a></li>
+                        <li><a href="#contact" class="hover:text-brand-lightgreen transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-4">Official Portals</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.incometax.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-lightgreen transition-colors flex items-center"><i class="fa-solid fa-arrow-up-right-from-square text-[10px] mr-1.5"></i> Income Tax E-Filing Portal</a></li>
+                        <li><a href="https://www.gst.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-lightgreen transition-colors flex items-center"><i class="fa-solid fa-arrow-up-right-from-square text-[10px] mr-1.5"></i> GST Official Portal</a></li>
+                        <li><a href="https://www.mca.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-lightgreen transition-colors flex items-center"><i class="fa-solid fa-arrow-up-right-from-square text-[10px] mr-1.5"></i> MCA V3 Services</a></li>
+                        <li><a href="https://www.cbic.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-lightgreen transition-colors flex items-center"><i class="fa-solid fa-arrow-up-right-from-square text-[10px] mr-1.5"></i> CBIC Circulars</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-4">Compliance Notice</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                        Disclaimer: Portal updates listed on this platform are aggregated from official public government channels for advisory reference. HS & CO is an independent professional practice.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; <span id="currentYear"></span> HS & CO (Accounting & Tax Professionals). All Rights Reserved.</p>
+                <div class="flex space-x-4 text-slate-400">
+                    <a href="#" aria-label="LinkedIn" class="hover:text-brand-lightgreen"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                    <a href="#" aria-label="WhatsApp" class="hover:text-brand-lightgreen"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+                    <a href="#" aria-label="Twitter" class="hover:text-brand-lightgreen"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Back To Top Button -->
+    <button id="backToTopBtn" onclick="scrollToTop()" aria-label="Scroll to top" class="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-gradient-to-r from-brand-green to-emerald-600 text-white shadow-2xl border border-emerald-400/30 opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4 hover:scale-110 active:scale-95 focus:outline-none flex items-center justify-center">
+        <i class="fa-solid fa-arrow-up text-base"></i>
+    </button>
+
+    <script>
+        // Dynamic Current Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Scroll to Top Logic
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function initComplianceCalendar() {
+            const now = new Date();
+            const monthShort = now.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+            const monthFull = now.toLocaleString('en-US', { month: 'long' });
+            const year = now.getFullYear();
+            const curMonthIdx = now.getMonth();
+
+            // Verified Section 1 Data: Income Tax Compliances (CBDT Guidelines)
+            let section1Items = [
+                { day: '07', title: 'TDS / TCS Deposit', sub: 'Monthly ITNS 281 Challan Payment', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' }
+            ];
+
+            // Month-specific Income Tax Deadlines
+            if (curMonthIdx === 5) { // June
+                section1Items.push({ day: '15', title: 'Advance Tax Q1 Installment', sub: '15% Cumulative Direct Tax Payment', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' });
+            } else if (curMonthIdx === 8) { // September
+                section1Items.push(
+                    { day: '15', title: 'Advance Tax Q2 Installment', sub: '45% Cumulative Direct Tax Payment', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' },
+                    { day: '30', title: 'Tax Audit Report (Form 3CD)', sub: 'Sec 44AB Tax Audit Report Upload', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' },
+                    { day: '30', title: 'Form 10B / 10BB Audit', sub: 'Trusts & NGO Audit Submission', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' }
+                );
+            } else if (curMonthIdx === 11) { // December
+                section1Items.push({ day: '15', title: 'Advance Tax Q3 Installment', sub: '75% Cumulative Direct Tax Payment', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' });
+            } else if (curMonthIdx === 2) { // March
+                section1Items.push({ day: '15', title: 'Advance Tax Q4 Installment', sub: '100% Direct Tax Payment Deadline', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' });
+            }
+
+            // Quarterly TDS Return deadlines (Jul 31, Oct 31, Jan 31, May 31)
+            if (curMonthIdx === 6) { // July
+                section1Items.push(
+                    { day: '31', title: 'TDS Return Q1 (Form 24Q/26Q)', sub: 'Quarter 1 Return Submission', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' },
+                    { day: '31', title: 'ITR Filing (Non-Audit Cases)', sub: 'Salaried & Individual Taxpayer ITR-1 to 4', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' }
+                );
+            } else if (curMonthIdx === 9) { // October
+                section1Items.push(
+                    { day: '31', title: 'TDS Return Q2 (Form 24Q/26Q)', sub: 'Quarter 2 Return Submission', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' },
+                    { day: '31', title: 'ITR Filing (Corporate / Audit)', sub: 'Corporate & Audit ITR Submission', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' }
+                );
+            } else if (curMonthIdx === 0) { // January
+                section1Items.push({ day: '31', title: 'TDS Return Q3 (Form 24Q/26Q)', sub: 'Quarter 3 Return Submission', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' });
+            } else if (curMonthIdx === 4) { // May
+                section1Items.push({ day: '31', title: 'TDS Return Q4 (Form 24Q/26Q)', sub: 'Quarter 4 Return Submission', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' });
+            }
+
+            // Fallback IT items to ensure full calendar view
+            if (section1Items.length < 4) {
+                section1Items.push(
+                    { day: '15', title: 'Form 16 / 16A Quarterly', sub: 'TDS Certificate Distribution', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' },
+                    { day: '30', title: 'Form 61A Statement Review', sub: 'SFT Financial Transaction Statement', tag: 'IT', badgeColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', dateColor: 'bg-emerald-950 text-emerald-400 border-emerald-800', subColor: 'text-emerald-300' }
+                );
+            }
+
+            // Verified Section 2 Data: GST Compliances (CBIC Guidelines)
+            let section2Items = [
+                { day: '10', title: 'GSTR-7 / GSTR-8 Return', sub: 'TDS & TCS Returns under GST', tag: 'GST', badgeColor: 'bg-blue-950 text-blue-400 border-blue-800', dateColor: 'bg-blue-950 text-blue-400 border-blue-800', subColor: 'text-blue-300' },
+                { day: '11', title: 'GSTR-1 Return (Monthly)', sub: 'Outward Supplies Monthly Filers', tag: 'GST', badgeColor: 'bg-blue-950 text-blue-400 border-blue-800', dateColor: 'bg-blue-950 text-blue-400 border-blue-800', subColor: 'text-blue-300' },
+                { day: '13', title: 'GSTR-1 IFF / GSTR-6 Filing', sub: 'QRMP Invoice Facility & ISD Filing', tag: 'GST', badgeColor: 'bg-blue-950 text-blue-400 border-blue-800', dateColor: 'bg-blue-950 text-blue-400 border-blue-800', subColor: 'text-blue-300' },
+                { day: '20', title: 'GSTR-3B Return (Monthly)', sub: 'Summary Return & Tax Payment', tag: 'GST', badgeColor: 'bg-blue-950 text-blue-400 border-blue-800', dateColor: 'bg-blue-950 text-blue-400 border-blue-800', subColor: 'text-blue-300' },
+                { day: '25', title: 'GST PMT-06 Deposit', sub: 'Monthly QRMP Challan Payment', tag: 'GST', badgeColor: 'bg-blue-950 text-blue-400 border-blue-800', dateColor: 'bg-blue-950 text-blue-400 border-blue-800', subColor: 'text-blue-300' }
+            ];
+
+            if (curMonthIdx === 11) { // December
+                section2Items.push(
+                    { day: '31', title: 'GSTR-9 & GSTR-9C Annual', sub: 'Annual GST Return & Reconciliation Statement', tag: 'GST', badgeColor: 'bg-blue-950 text-blue-400 border-blue-800', dateColor: 'bg-blue-950 text-blue-400 border-blue-800', subColor: 'text-blue-300' }
+                );
+            } else {
+                section2Items.push(
+                    { day: '30', title: 'GSTR-2B ITC Matching', sub: 'Automated Rule 36(4) Reconciliation', tag: 'GST', badgeColor: 'bg-blue-950 text-blue-400 border-blue-800', dateColor: 'bg-blue-950 text-blue-400 border-blue-800', subColor: 'text-blue-300' }
+                );
+            }
+
+            function renderTickerItems(items) {
+                const markup = items.map(item => `
+                    <div class="p-2.5 rounded-xl bg-brand-slate border border-slate-800/80 hover:border-emerald-500/50 transition-all flex items-center justify-between">
+                        <div class="flex items-center space-x-2.5">
+                            <div class="w-9 h-9 rounded-lg ${item.dateColor} flex flex-col items-center justify-center font-bold flex-shrink-0 leading-none">
+                                <span class="text-[8px] uppercase font-bold ${item.subColor}">${monthShort}</span>
+                                <span class="text-xs font-black">${item.day}</span>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white text-[11px]">${item.title}</h5>
+                                <p class="text-[10px] text-slate-400">${item.sub}</p>
+                            </div>
+                        </div>
+                        <span class="text-[9px] px-2 py-0.5 rounded ${item.badgeColor} font-semibold flex-shrink-0">
+                            ${item.tag}
+                        </span>
+                    </div>
+                `).join('');
+
+                return markup + markup;
+            }
+
+            const ticker1El = document.getElementById('section1Ticker');
+            const ticker2El = document.getElementById('section2Ticker');
+            if (ticker1El) ticker1El.innerHTML = renderTickerItems(section1Items);
+            if (ticker2El) ticker2El.innerHTML = renderTickerItems(section2Items);
+        }
+
+        initComplianceCalendar();
+
+        // Mobile Drawer Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Service Select Helper for Form
+        function setServicePreference(serviceName) {
+            const selectEl = document.getElementById('serviceType');
+            if(selectEl) {
+                selectEl.value = serviceName;
+            }
+        }
+
+        // Comprehensive Official Circulars & Historical Repository Data
+        const portalNewsData = [
+            {
+                id: 1,
+                category: 'gst',
+                source: 'GSTAT / CBIC',
+                sourceUrl: 'https://taxinformation.cbic.gov.in/view-pdf/1003342/ENG/Circulars',
+                title: 'CBIC Circular No. 40/2026: Quashes Sec 129 Penalty on Same-GSTIN Stock Transfer Without E-Way Bill',
+                snippet: 'GST Appellate Tribunal holds that stock transfer between identical GSTIN branches without intention to evade tax cannot attract Section 129 penalty.',
+                date: 'Sep 03, 2026',
+                isoDate: '2026-09-03',
+                badgeBg: 'bg-blue-950 text-blue-400 border-blue-800',
+                isPdf: true
+            },
+            {
+                id: 2,
+                category: 'mca',
+                source: 'Ministry of Corporate Affairs',
+                sourceUrl: 'https://ca2013.com/notifications/httpsca2013-comwp-contentuploads202606mca-notification-272930-pdf/',
+                title: 'MCA General Circular No. 04/2026: Companies Compliance Facilitation Scheme (CCFS-2026) Extended to 15 September 2026',
+                snippet: 'Ministry of Corporate Affairs extends CCFS-2026 allowing pending ROC annual filings (AOC-4, MGT-7, ADT-1) at 10% reduced additional penalties.',
+                date: 'Aug 31, 2026',
+                isoDate: '2026-08-31',
+                badgeBg: 'bg-purple-950 text-purple-400 border-purple-800',
+                isPdf: true
+            },
+            {
+                id: 3,
+                category: 'incometax',
+                source: 'Income Tax Portal (CBDT)',
+                sourceUrl: 'https://www.incometaxindia.gov.in/documents/d/guest/circular-4-2026-pdf',
+                title: 'CBDT Circular No. 04/2026: Mandatory DIN & TAN Registration Advisory under Section 195 for NRI Property Purchases',
+                snippet: 'CBDT issues advisory for buyers purchasing immovable property from Non-Resident Indians regarding mandatory TAN deduction under Section 195.',
+                date: 'Aug 31, 2026',
+                isoDate: '2026-08-31',
+                badgeBg: 'bg-emerald-950 text-emerald-400 border-emerald-800',
+                isPdf: true
+            },
+            {
+                id: 4,
+                category: 'mca',
+                source: 'MCA Portal',
+                sourceUrl: 'https://www.mca.gov.in/content/mca/global/en/notifications-circulars/notifications.html',
+                title: 'MCA Notifies Companies (Indian Accounting Standards) Amendment Rules 2026',
+                snippet: 'MCA notifies updates in Ind AS 101, 107, 109, and 110 establishing statutory accounting treatment for ESG-linked corporate loans and green-energy contracts.',
+                date: 'Aug 17, 2026',
+                isoDate: '2026-08-17',
+                badgeBg: 'bg-purple-950 text-purple-400 border-purple-800',
+                isPdf: false
+            },
+            {
+                id: 5,
+                category: 'incometax',
+                source: 'CBDT Circulars',
+                sourceUrl: 'https://www.incometaxindia.gov.in/w/circular-no.-1/2026-clarification-regarding-power-to-condone-delay-in-filing-form-no.-10a-under-sub-clause-i-clause-ac-of-sub-section-1-of-section-12a-of-the-income-tax-act-1961',
+                title: 'CBDT Circular No. 01/2026: Clarification Regarding Power to Condone Delay in Filing Form 10A / 10AB',
+                snippet: 'CBDT condones procedural delays in electronic filing of Form 10A/10AB for charitable trusts seeking Section 80G renewal under Section 119(2)(b).',
+                date: 'Jul 02, 2026',
+                isoDate: '2026-07-02',
+                badgeBg: 'bg-emerald-950 text-emerald-400 border-emerald-800',
+                isPdf: true
+            },
+            {
+                id: 6,
+                category: 'gst',
+                source: 'CBIC Customs',
+                sourceUrl: 'https://taxinformation.cbic.gov.in/view-pdf/1003342/ENG/Circulars',
+                title: 'CBIC Circular No. 25/2026: Extension of Customs Trade Facilitation Measures under Section 143AA',
+                snippet: 'CBIC extends procedural trade relaxations under Section 143AA to mitigate maritime transhipment disruptions and streamline export clearance.',
+                date: 'May 14, 2026',
+                isoDate: '2026-05-14',
+                badgeBg: 'bg-blue-950 text-blue-400 border-blue-800',
+                isPdf: true
+            },
+            {
+                id: 7,
+                category: 'gst',
+                source: 'CBIC Circulars',
+                sourceUrl: 'https://idtc.icai.org/gst_new.php?gst_type=CENTRAL+GOODS+AND+SERVICES+TAX',
+                title: 'CBIC Circular No. 10/2026: Fee Waiver for Export Shipping Bill Amendments under Force Majeure',
+                snippet: 'CBIC waives departmental fees for cancellation or amendment of Shipping Bills on ICEGATE when triggered by Middle East geopolitical trade disruptions.',
+                date: 'Mar 10, 2026',
+                isoDate: '2026-03-10',
+                badgeBg: 'bg-blue-950 text-blue-400 border-blue-800',
+                isPdf: false
+            },
+            {
+                id: 8,
+                category: 'incometax',
+                source: 'Income Tax Portal',
+                sourceUrl: 'https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-04/Notification%20No.45_2026.pdf',
+                title: 'CBDT Notification No. 45/2026: Mandatory e-Verification Guidelines & AIS Data Discrepancy Resolution',
+                snippet: 'CBDT introduces automated online flag mechanism for taxpayers to rectify discrepancies between Annual Information Statement (AIS) and Form 26AS.',
+                date: 'Jan 15, 2026',
+                isoDate: '2026-01-15',
+                badgeBg: 'bg-emerald-950 text-emerald-400 border-emerald-800',
+                isPdf: true
+            },
+            {
+                id: 9,
+                category: 'incometax',
+                source: 'CBDT Circulars',
+                sourceUrl: 'https://www.incometaxindia.gov.in/pages/communications/circulars.aspx',
+                title: 'CBDT Circular No. 15/2025: Extension of Timelines for Filing Tax Audit Reports & Corporate ITRs',
+                snippet: 'CBDT extends specified date for furnishing Tax Audit Reports (Form 3CD) and Income Tax Returns for corporate assessees under Section 119.',
+                date: 'Oct 29, 2025',
+                isoDate: '2025-10-29',
+                badgeBg: 'bg-emerald-950 text-emerald-400 border-emerald-800',
+                isPdf: false
+            },
+            {
+                id: 10,
+                category: 'gst',
+                source: 'CBIC Circulars',
+                sourceUrl: 'https://www.cbic.gov.in/htdocs-cbec/gst/gst-circulars',
+                title: 'CBIC Circular No. 210/2025: GST Valuation of Corporate Guarantees Between Related Entities',
+                snippet: 'Clarifications issued on 1% per annum valuation framework under Rule 28(2) for corporate parent guarantees provided to financial institutions.',
+                date: 'Jul 18, 2025',
+                isoDate: '2025-07-18',
+                badgeBg: 'bg-blue-950 text-blue-400 border-blue-800',
+                isPdf: false
+            },
+            {
+                id: 11,
+                category: 'mca',
+                source: 'MCA Portal',
+                sourceUrl: 'https://www.mca.gov.in/content/mca/global/en/notifications-circulars/circulars.html',
+                title: 'MCA Advisory: Mandatory Form DPT-3 Return of Deposits & Non-Deposit Receipts',
+                snippet: 'Ministry of Corporate Affairs reminds all Private and Public Companies regarding mandatory annual submission of Form DPT-3 loan disclosures.',
+                date: 'May 28, 2025',
+                isoDate: '2025-05-28',
+                badgeBg: 'bg-purple-950 text-purple-400 border-purple-800',
+                isPdf: false
+            },
+            {
+                id: 12,
+                category: 'incometax',
+                source: 'Income Tax Portal',
+                sourceUrl: 'https://www.incometaxindia.gov.in/pages/communications/circulars.aspx',
+                title: 'CBDT Circular: Guidelines on TDS Deduction on Virtual Digital Assets under Section 194S',
+                snippet: 'Comprehensive circular on 1% TDS deduction responsibility on transfer of Virtual Digital Assets (VDA) and crypto-currency exchanges.',
+                date: 'Nov 15, 2024',
+                isoDate: '2024-11-15',
+                badgeBg: 'bg-emerald-950 text-emerald-400 border-emerald-800',
+                isPdf: false
+            }
+        ];
+
+        // Populate Top Marquee Ticker
+        function initTicker() {
+            const tickerEl = document.getElementById('tickerContent');
+            if(!tickerEl) return;
+
+            const sorted = [...portalNewsData].sort((a, b) => new Date(b.isoDate) - new Date(a.isoDate));
+
+            const tickerHTML = sorted.map(item => `
+                <a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" class="ticker-item hover:underline group">
+                    <strong class="text-brand-lightgreen">[${item.source}]:</strong> ${item.title} 
+                    <span class="text-slate-400 ml-1">(${item.date})</span>
+                    ${item.isPdf ? '<i class="fa-solid fa-file-pdf text-red-400 ml-1 text-[10px]"></i>' : '<i class="fa-solid fa-arrow-up-right-from-square text-brand-green ml-1 text-[10px]"></i>'}
+                </a>
+            `).join(' • ');
+
+            tickerEl.innerHTML = tickerHTML + ' • ' + tickerHTML;
+        }
+
+        let activeCategoryFilter = 'all';
+
+        // Render Portal Circular Cards
+        function renderNews() {
+            const container = document.getElementById('newsGrid');
+            const searchVal = (document.getElementById('newsSearch')?.value || '').toLowerCase();
+            if (!container) return;
+
+            let sortedData = [...portalNewsData].sort((a, b) => new Date(b.isoDate) - new Date(a.isoDate));
+            let filtered = sortedData;
+
+            if (activeCategoryFilter !== 'all') {
+                filtered = filtered.filter(item => item.category === activeCategoryFilter);
+            }
+
+            if (searchVal) {
+                filtered = filtered.filter(item => 
+                    item.title.toLowerCase().includes(searchVal) || 
+                    item.snippet.toLowerCase().includes(searchVal) ||
+                    item.source.toLowerCase().includes(searchVal)
+                );
+            }
+
+            if(filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-slate-400 border border-slate-800 rounded-2xl bg-brand-navy">
+                        <i class="fa-solid fa-file-circle-xmark text-3xl mb-2 text-slate-500"></i>
+                        <p class="text-sm">No circulars found matching your search term.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(item => `
+                <div class="bg-brand-cardbg border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-brand-green/60 transition-all group shadow-md">
+                    <div>
+                        <div class="flex items-center justify-between mb-3 text-xs">
+                            <span class="px-2.5 py-1 rounded-md border font-mono font-semibold ${item.badgeBg}">
+                                ${item.source}
+                            </span>
+                            <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> ${item.date}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand-lightgreen transition-colors mb-2 leading-snug">
+                            <a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-start gap-1.5">
+                                <span>${item.title}</span>
+                            </a>
+                        </h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            ${item.snippet}
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-end text-xs">
+                        <a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-brand-navy hover:bg-brand-blue border border-slate-700 hover:border-brand-green text-brand-lightgreen hover:text-white transition-all font-bold flex items-center shadow-sm">
+                            ${item.isPdf ? '<i class="fa-solid fa-file-pdf text-red-400 mr-1.5"></i> Open Circular PDF' : '<i class="fa-solid fa-arrow-up-right-from-square mr-1.5 text-[10px]"></i> View Circular'}
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Handlers
+        const portalFilters = document.querySelectorAll('.portal-filter-btn');
+        portalFilters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                portalFilters.forEach(b => {
+                    b.classList.remove('bg-brand-green', 'text-white');
+                    b.classList.add('bg-brand-navy', 'text-slate-300');
+                });
+                btn.classList.add('bg-brand-green', 'text-white');
+                btn.classList.remove('bg-brand-navy', 'text-slate-300');
+
+                activeCategoryFilter = btn.getAttribute('data-category');
+                renderNews();
+            });
+        });
+
+        function filterPortalNews() {
+            renderNews();
+        }
+
+        function refreshPortalNews() {
+            const icon = document.getElementById('refreshIcon');
+            if(icon) icon.classList.add('animate-spin');
+            setTimeout(() => {
+                renderNews();
+                if(icon) icon.classList.remove('animate-spin');
+            }, 600);
+        }
+
+        initTicker();
+        renderNews();
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const statusDiv = document.getElementById('formStatus');
+            const name = document.getElementById('fullName').value;
+
+            statusDiv.classList.remove('hidden', 'bg-red-950', 'text-red-300');
+            statusDiv.classList.add('bg-emerald-950', 'text-emerald-300', 'border', 'border-emerald-800');
+            statusDiv.innerHTML = `<i class="fa-solid fa-circle-check mr-2"></i> Thank you ${name}! Your request has been received. A specialist at <strong>HS & CO</strong> will reach out to you shortly.`;
+
+            document.getElementById('consultationForm').reset();
+            setTimeout(() => {
+                statusDiv.classList.add('hidden');
+            }, 7000);
+        }
+    </script>
+</body>
+</html>
